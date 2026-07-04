@@ -1,5 +1,5 @@
 {
-  "name": "Ayurvedic Diet Recommender",
+  "name": "PrakritiAI",
   "description": "Personalized Ayurvedic diet recommender mapping body type (Prakriti) and current symptoms (Vikriti) to customized meal plans and lifestyle guides using AI.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

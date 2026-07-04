@@ -335,8 +335,7 @@ export default function App() {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <h1 className="font-serif text-xl font-bold text-stone-800 tracking-tight">Ayurvedic Recommender</h1>
-                <span className="text-[10px] bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full font-mono border border-stone-200/50">ML + AI</span>
+                <h1 className="font-serif text-xl font-bold text-stone-800 tracking-tight">PrakritiAI</h1>
               </div>
               <p className="text-xs text-stone-500">Prakriti & Vikriti Element-Balancing Diet Engine</p>
             </div>
