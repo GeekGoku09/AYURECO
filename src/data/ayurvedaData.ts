@@ -159,6 +159,71 @@ export const FALLBACK_RECOMMENDATIONS: Record<'Vata' | 'Pitta' | 'Kapha', DietRe
         instructions: 'Warm up a cup of almond milk with a pinch of cardamon and nutmeg. Eat 2-3 soft Medjool dates along with the drink in the late afternoon.'
       }
     },
+    weeklyPlan: [
+      {
+        day: 'Monday',
+        meals: {
+          breakfast: { name: 'Moong Dal Chilla', beneficialFoods: ['Split yellow moong dal', 'Ghee', 'Ginger'], instructions: 'Prepare a warm, soft Moong Dal pancake cooked in Ghee with ginger and coriander.' },
+          lunch: { name: 'Soft Moong Dal Khichdi', beneficialFoods: ['Basmati rice', 'Moong dal', 'Ghee', 'Cumin'], instructions: 'Cook mushy rice and lentils with turmeric and ginger, topped with warm ghee.' },
+          dinner: { name: 'Warm Bottle Gourd (Lauki) Sabzi & Rotis', beneficialFoods: ['Bottle gourd', 'Whole wheat', 'Ghee', 'Fennel'], instructions: 'Purée cooked bottle gourd with fennel seeds, serve hot with soft roti smeared with ghee.' },
+          snacks: { name: 'Warm Cardamom Milk & Dates', beneficialFoods: ['Milk', 'Dates', 'Cardamom'], instructions: 'Warm milk with cardamom, paired with sweet soft dates.' }
+        }
+      },
+      {
+        day: 'Tuesday',
+        meals: {
+          breakfast: { name: 'Warm Ragi Porridge', beneficialFoods: ['Finger millet (Ragi)', 'Milk', 'Almonds', 'Cardamom'], instructions: 'Cook ragi flour in milk until thick, sweeten with dates and ghee.' },
+          lunch: { name: 'Basmati Rice & Sweet Pumpkin (Kaddu) Sabzi', beneficialFoods: ['Rice', 'Pumpkin', 'Ghee', 'Coriander'], instructions: 'Enjoy steamed rice with mild pumpkin sabzi simmered in ghee.' },
+          dinner: { name: 'Yellow Lentil (Toor Dal) Soup', beneficialFoods: ['Toor dal', 'Ginger', 'Ghee'], instructions: 'Nourishing warm dal tempered with cumin, served with soft Chapatis.' },
+          snacks: { name: 'Stewed Apples with Cinnamon', beneficialFoods: ['Apples', 'Cinnamon', 'Cloves'], instructions: 'Cook peeled apple slices with water, cinnamon, and cloves until soft.' }
+        }
+      },
+      {
+        day: 'Wednesday',
+        meals: {
+          breakfast: { name: 'Soft Spiced Sooji Upma', beneficialFoods: ['Semolina (Sooji)', 'Carrots', 'Ghee', 'Ginger'], instructions: 'Sauté semolina in ghee, cook with warm water, grated carrots, and fresh ginger.' },
+          lunch: { name: 'Rice, Kadhi & Sautéed Carrots', beneficialFoods: ['Rice', 'Yogurt', 'Gram flour', 'Ghee'], instructions: 'Enjoy warm yogurt Kadhi tempered with cumin alongside soft rice and carrots.' },
+          dinner: { name: 'Mung Dal Khichdi & Zucchini Sabzi', beneficialFoods: ['Moong dal', 'Rice', 'Zucchini', 'Ghee'], instructions: 'Mushy khichdi served with a side of zucchini sautéed in ghee.' },
+          snacks: { name: 'Roasted Almonds & Raisins', beneficialFoods: ['Almonds', 'Raisins'], instructions: 'Eat soaked and peeled almonds paired with sweet organic raisins.' }
+        }
+      },
+      {
+        day: 'Thursday',
+        meals: {
+          breakfast: { name: 'Besan Chilla', beneficialFoods: ['Gram flour (Besan)', 'Ghee', 'Coriander'], instructions: 'Savory chickpea flour pancake cooked with ghee and seasoned with ajwain.' },
+          lunch: { name: 'Mung Dal, Rice, & Palak (Spinach) Sabzi', beneficialFoods: ['Moong dal', 'Rice', 'Spinach', 'Ghee'], instructions: 'Steamed rice with yellow dal and warm wilted spinach seasoned with cumin.' },
+          dinner: { name: 'Lauki (Bottle Gourd) Khichdi', beneficialFoods: ['Rice', 'Moong dal', 'Bottle gourd', 'Ghee'], instructions: 'A comforting, easily digestible one-pot meal cooked with ghee and turmeric.' },
+          snacks: { name: 'Ginger Tea with Dates', beneficialFoods: ['Fresh ginger', 'Dates'], instructions: 'Boil fresh ginger slices, serve warm with a side of soft dates.' }
+        }
+      },
+      {
+        day: 'Friday',
+        meals: {
+          breakfast: { name: 'Soft Spiced Poha', beneficialFoods: ['Flattened rice (Poha)', 'Ghee', 'Turmeric', 'Coriander'], instructions: 'Rinse poha and steam with turmeric, ginger, and cumin in ghee. Keep it soft.' },
+          lunch: { name: 'Whole Wheat Roti & Sweet Potato Sabzi', beneficialFoods: ['Whole wheat', 'Sweet potato', 'Ghee'], instructions: 'Soft rotis served with sweet potatoes sautéed in ghee and cumin.' },
+          dinner: { name: 'Nourishing Root Vegetable Stew', beneficialFoods: ['Carrots', 'Beets', 'Quinoa', 'Ghee'], instructions: 'A warm, thick stew of carrots and beets served over warm cooked quinoa.' },
+          snacks: { name: 'Warm Almond Milk with Nutmeg', beneficialFoods: ['Almond milk', 'Nutmeg', 'Cardamom'], instructions: 'Warm cup of almond milk spiked with cardamom and grounding nutmeg.' }
+        }
+      },
+      {
+        day: 'Saturday',
+        meals: {
+          breakfast: { name: 'Sweet Rava Porridge', beneficialFoods: ['Semolina', 'Milk', 'Saffron', 'Ghee'], instructions: 'Roast semolina in ghee, boil in milk with a pinch of saffron and cardamom.' },
+          lunch: { name: 'Basmati Rice, Toor Dal & Ash Gourd Sabzi', beneficialFoods: ['Rice', 'Toor dal', 'Ash gourd', 'Ghee'], instructions: 'Warm comforting meal of yellow dal, steamed rice, and tender ash gourd.' },
+          dinner: { name: 'Light Moong Dal Soup', beneficialFoods: ['Moong dal', 'Ginger', 'Cumin', 'Ghee'], instructions: 'Simple soup of yellow split mung dal with ghee-cumin tempering.' },
+          snacks: { name: 'Roasted Makhana in Ghee', beneficialFoods: ['Foxnuts (Makhana)', 'Ghee', 'Turmeric'], instructions: 'Gently roast foxnuts in ghee with a tiny pinch of turmeric and salt.' }
+        }
+      },
+      {
+        day: 'Sunday',
+        meals: {
+          breakfast: { name: 'Moong Dal Chilla with Mint Chutney', beneficialFoods: ['Moong dal', 'Mint', 'Coriander', 'Ghee'], instructions: 'Warm savory pancake served with a refreshing, non-spicy mint-coriander chutney.' },
+          lunch: { name: 'Vegetable Khichdi with Ghee Tadka', beneficialFoods: ['Rice', 'Moong dal', 'Carrots', 'Peas', 'Ghee'], instructions: 'Mushy rice and lentil pot with sweet peas and carrots, finished with ghee.' },
+          dinner: { name: 'Pumpkin Soup with cooked Quinoa', beneficialFoods: ['Pumpkin', 'Quinoa', 'Fennel', 'Ghee'], instructions: 'Smooth sweet pumpkin soup paired with warm fluffy cooked quinoa.' },
+          snacks: { name: 'Warm Fennel Tea & Dates', beneficialFoods: ['Fennel seeds', 'Dates'], instructions: 'Brew fennel seeds in water, sip warm alongside a couple of sweet dates.' }
+        }
+      }
+    ],
     lifestyleTips: [
       'Establish a regular daily routine (sleeping, waking, and eating at the same times).',
       'Massage your body with warm sesame oil (Abhyanga) before taking a warm bath or shower.',
@@ -220,6 +285,71 @@ export const FALLBACK_RECOMMENDATIONS: Record<'Vata' | 'Pitta' | 'Kapha', DietRe
         instructions: 'Enjoy a bowl of fresh sweet melon or drink a glass of fresh organic coconut water in the mid-afternoon. Do not combine melon with any other foods.'
       }
     },
+    weeklyPlan: [
+      {
+        day: 'Monday',
+        meals: {
+          breakfast: { name: 'Sweet Coconut Poha', beneficialFoods: ['Flattened rice', 'Coconut shreds', 'Coriander'], instructions: 'Steam flattened rice with mild fennel, grated coconut, and sweet raisins.' },
+          lunch: { name: 'Basmati Rice, Moong Dal, & Zucchini Sabzi', beneficialFoods: ['Rice', 'Moong dal', 'Zucchini', 'Coconut oil'], instructions: 'Yellow mung dal with steamed rice and zucchini sautéed in cooling coconut oil.' },
+          dinner: { name: 'Mild Lauki (Bottle Gourd) Sabzi with Rotis', beneficialFoods: ['Bottle gourd', 'Whole wheat', 'Ghee', 'Fennel'], instructions: 'Enjoy soft rotis with sweet bottle gourd cooked with fennel and coriander.' },
+          snacks: { name: 'Cooling Coconut Water', beneficialFoods: ['Coconut water'], instructions: 'Drink fresh, pure organic coconut water in the mid-afternoon.' }
+        }
+      },
+      {
+        day: 'Tuesday',
+        meals: {
+          breakfast: { name: 'Oats Porridge with Maple Syrup', beneficialFoods: ['Oats', 'Milk', 'Maple syrup', 'Raisins'], instructions: 'Cook oats in whole milk or coconut milk, sweeten with maple syrup and raisins.' },
+          lunch: { name: 'Rice, Kadhi & Sweet Pumpkin Sabzi', beneficialFoods: ['Rice', 'Yogurt', 'Pumpkin', 'Coconut oil'], instructions: 'Enjoy cooling yogurt Kadhi (no mustard seeds) with rice and sweet pumpkin.' },
+          dinner: { name: 'Cucumber-Mint Soup with Rice', beneficialFoods: ['Cucumber', 'Mint', 'Rice', 'Ghee'], instructions: 'A cooling cucumber-mint puréed soup served alongside warm steamed basmati rice.' },
+          snacks: { name: 'Fresh Watermelon Bowl', beneficialFoods: ['Watermelon'], instructions: 'Enjoy a refreshing bowl of sweet ripe watermelon (eat alone, do not mix).' }
+        }
+      },
+      {
+        day: 'Wednesday',
+        meals: {
+          breakfast: { name: 'Soft Steaped Idli with Coconut Chutney', beneficialFoods: ['Rice flour', 'Urad dal', 'Coconut'], instructions: 'Steamed fermented rice cakes served with mild, sweet coconut chutney.' },
+          lunch: { name: 'Barley Khichdi with Peas & Coriander', beneficialFoods: ['Barley', 'Peas', 'Coriander', 'Ghee'], instructions: 'Cook pearled barley with sweet peas, fresh coriander, and a touch of ghee.' },
+          dinner: { name: 'Sautéed Asparagus & Sweet Potatoes', beneficialFoods: ['Asparagus', 'Sweet potato', 'Basmati rice', 'Coconut oil'], instructions: 'Asparagus and sweet potato spears sautéed in coconut oil, served over rice.' },
+          snacks: { name: 'Sweet Lassi with Cardamom', beneficialFoods: ['Yogurt', 'Cardamom', 'Sugar'], instructions: 'Blend fresh sweet yogurt with water, a pinch of sugar, and cardamom.' }
+        }
+      },
+      {
+        day: 'Thursday',
+        meals: {
+          breakfast: { name: 'Wheat Flakes with Almond Milk', beneficialFoods: ['Wheat flakes', 'Almond milk', 'Cardamom'], instructions: 'Serve organic wheat flakes in warm almond milk flavored with cardamom.' },
+          lunch: { name: 'Roti, Sweet Yellow Lentils & Cauliflower Sabzi', beneficialFoods: ['Whole wheat', 'Yellow lentils', 'Cauliflower', 'Coconut oil'], instructions: 'Enjoy soft chapatis with sweet lentils and sautéed cauliflower florets.' },
+          dinner: { name: 'Fennel-Infused Barley Soup', beneficialFoods: ['Barley', 'Fennel', 'Carrots', 'Ghee'], instructions: 'Cook barley with carrots and fennel seeds into a light cooling stew.' },
+          snacks: { name: 'Soaked Almonds & Sweet Grapes', beneficialFoods: ['Almonds', 'Grapes'], instructions: 'Eat soaked and peeled almonds with a handful of sweet black grapes.' }
+        }
+      },
+      {
+        day: 'Friday',
+        meals: {
+          breakfast: { name: 'Barley Porridge with Coconut Milk', beneficialFoods: ['Barley', 'Coconut milk', 'Maple syrup'], instructions: 'Simmer pearled barley in coconut milk, finish with maple syrup.' },
+          lunch: { name: 'Rice, Sprouted Mung Dal & Cucumber Raita', beneficialFoods: ['Rice', 'Mung sprouts', 'Cucumber', 'Yogurt'], instructions: 'Steamed basmati rice with sprouted mung beans and cooling cucumber raita.' },
+          dinner: { name: 'Mild Ridge Gourd (Turai) Sabzi & Rotis', beneficialFoods: ['Ridge gourd', 'Whole wheat', 'Coconut oil'], instructions: 'Cook fresh ridge gourd in coconut oil with fennel, serve with soft rotis.' },
+          snacks: { name: 'Fresh Sweet Pear or Apple', beneficialFoods: ['Pears', 'Apples'], instructions: 'Enjoy a crisp sweet pear or apple in the late afternoon.' }
+        }
+      },
+      {
+        day: 'Saturday',
+        meals: {
+          breakfast: { name: 'Coriander-Mint Green Smoothie', beneficialFoods: ['Coriander', 'Mint', 'Cucumber', 'Coconut milk'], instructions: 'Blend cucumber, fresh mint, coriander, and light coconut milk into a cooling drink.' },
+          lunch: { name: 'Basmati Rice, Sweet Sona Masoori Dal & Broccoli Sauté', beneficialFoods: ['Rice', 'Yellow lentils', 'Broccoli', 'Ghee'], instructions: 'Eat steamed rice with sweet lentils and broccoli florets sautéed in ghee.' },
+          dinner: { name: 'Sweet Potato & Green Peas Mash', beneficialFoods: ['Sweet potato', 'Green peas', 'Whole wheat chapatis'], instructions: 'Serve mashed sweet potatoes and peas with warm wheat chapatis.' },
+          snacks: { name: 'Coriander Seed Infusion', beneficialFoods: ['Coriander seeds'], instructions: 'Steep coriander seeds in hot water, cool to room temperature, and drink.' }
+        }
+      },
+      {
+        day: 'Sunday',
+        meals: {
+          breakfast: { name: 'Rava Upma with Sweet Peas', beneficialFoods: ['Semolina', 'Peas', 'Coriander', 'Ghee'], instructions: 'Cook savory semolina with sweet peas, cumin, and coriander (no mustard/chillies).' },
+          lunch: { name: 'Coconut Rice & Sautéed French Beans', beneficialFoods: ['Basmati rice', 'Coconut milk', 'French beans', 'Coconut oil'], instructions: 'Steamed rice cooked with coconut milk, served with French beans.' },
+          dinner: { name: 'Cooling Rice Pudding with Cardamom', beneficialFoods: ['Basmati rice', 'Milk', 'Cardamom', 'Rose water'], instructions: 'Simmer rice in sweet milk with cardamom and a splash of rose water.' },
+          snacks: { name: 'Soaked Raisins and Dates', beneficialFoods: ['Raisins', 'Dates'], instructions: 'Snack on sweet soaked raisins and dates to soothe sugar cravings.' }
+        }
+      }
+    ],
     lifestyleTips: [
       'Avoid high midday sun, hot saunas, and steam rooms which raise internal body temperature.',
       'Incorporate cooling lifestyle habits, such as moon-walking (walking under moonlight) and swimming.',
@@ -281,6 +411,71 @@ export const FALLBACK_RECOMMENDATIONS: Record<'Vata' | 'Pitta' | 'Kapha', DietRe
         instructions: 'Boil fresh sliced ginger root in water for 10 minutes. Let it cool to a warm temperature, add a squeeze of lemon and a teaspoon of raw honey. Sip slowly.'
       }
     },
+    weeklyPlan: [
+      {
+        day: 'Monday',
+        meals: {
+          breakfast: { name: 'Spicy Besan Chilla', beneficialFoods: ['Gram flour (Besan)', 'Ginger', 'Green chillies', 'Mint'], instructions: 'Savory chickpea flour pancake cooked with ginger, black pepper, and mint chutney.' },
+          lunch: { name: 'Spicy Quinoa & Masoor (Red Lentil) Dal', beneficialFoods: ['Quinoa', 'Red lentils', 'Black pepper', 'Ginger'], instructions: 'Red lentils cooked with black pepper and ginger, served over dry-roasted quinoa.' },
+          dinner: { name: 'Steamed Cabbage and Broccoli Sauté', beneficialFoods: ['Cabbage', 'Broccoli', 'Mustard oil', 'Ginger'], instructions: 'Wok-tossed cabbage and broccoli seasoned with fresh ginger and a touch of mustard oil.' },
+          snacks: { name: 'Warm Ginger-Lemon-Honey Water', beneficialFoods: ['Ginger', 'Lemon', 'Raw honey'], instructions: 'Sip hot ginger-lemon water cooled to warm, stirred with raw honey.' }
+        }
+      },
+      {
+        day: 'Tuesday',
+        meals: {
+          breakfast: { name: 'Dry-Roasted Oats Upma', beneficialFoods: ['Oats', 'Mustard seeds', 'Curry leaves', 'Chillies'], instructions: 'Sauté oats dry, then cook with warm water, mustard seeds, and fresh green chillies.' },
+          lunch: { name: 'Millet Roti & Sprouted Mung Bean Sabzi', beneficialFoods: ['Millet (Bajra)', 'Mung sprouts', 'Turmeric', 'Green chillies'], instructions: 'Bajra roti paired with sprouted mung beans stir-fried with green chillies.' },
+          dinner: { name: 'Hot Cabbage & Celery Soup', beneficialFoods: ['Cabbage', 'Celery', 'Ginger', 'Black pepper'], instructions: 'A clear, highly stimulating vegetable broth spiced with ginger and black pepper.' },
+          snacks: { name: 'Roasted Black Chickpeas (Chana)', beneficialFoods: ['Black chickpeas'], instructions: 'Enjoy a handful of oil-free dry roasted black chickpeas (Chana).' }
+        }
+      },
+      {
+        day: 'Wednesday',
+        meals: {
+          breakfast: { name: 'Baked Spiced Apple', beneficialFoods: ['Apple', 'Cinnamon', 'Cloves'], instructions: 'Bake a crisp apple with cinnamon, cardamom, and cloves; serve hot.' },
+          lunch: { name: 'Millet Roti & Spicy Spinach (Palak) Sabzi', beneficialFoods: ['Millet (Jowar)', 'Spinach', 'Garlic', 'Mustard seeds'], instructions: 'Enjoy Jowar roti with spicy garlicky spinach sautéed with mustard seeds.' },
+          dinner: { name: 'Spicy Masoor Dal Soup', beneficialFoods: ['Red lentils', 'Cayenne pepper', 'Ginger', 'Garlic'], instructions: 'A fiery, warming red lentil soup seasoned with garlic, ginger, and cumin.' },
+          snacks: { name: 'Warm Trikatu Spice Tea', beneficialFoods: ['Black pepper', 'Ginger', 'Long pepper'], instructions: 'Infuse ginger and black pepper in boiling water, sip hot to kindle metabolism.' }
+        }
+      },
+      {
+        day: 'Thursday',
+        meals: {
+          breakfast: { name: 'Spicy Poha with Mustard Seeds', beneficialFoods: ['Flattened rice', 'Mustard seeds', 'Curry leaves', 'Turmeric'], instructions: 'Rinse and drain poha. Cook with mustard seeds, turmeric, and green chillies. Dry texture.' },
+          lunch: { name: 'Brown Rice & Spicy Black Chickpeas (Kala Chana)', beneficialFoods: ['Brown rice', 'Black chickpeas', 'Ginger', 'Garlic'], instructions: 'Enjoy a small portion of brown rice with highly spiced dry black chickpeas.' },
+          dinner: { name: 'Steamed Asparagus & Brussels Sprouts', beneficialFoods: ['Asparagus', 'Brussels sprouts', 'Black pepper'], instructions: 'Enjoy steamed bitter vegetables sprinkled with freshly ground black pepper.' },
+          snacks: { name: 'Dry Roasted Makhana (No Oil)', beneficialFoods: ['Foxnuts'], instructions: 'Dry roast makhana in a pan with turmeric, black pepper, and a pinch of salt.' }
+        }
+      },
+      {
+        day: 'Friday',
+        meals: {
+          breakfast: { name: 'Barley Porridge with Dry Ginger', beneficialFoods: ['Barley', 'Dry ginger', 'Raw honey'], instructions: 'Cook pearled barley in water, flavor with dry ginger, and sweeten with raw honey once warm.' },
+          lunch: { name: 'Buckwheat Khichdi with lots of Ginger', beneficialFoods: ['Buckwheat', 'Moong dal', 'Ginger', 'Black pepper'], instructions: 'Prepare a warming, light khichdi using buckwheat instead of rice, heavily spiced.' },
+          dinner: { name: 'Spicy Lentil Soup & Rye Cracker', beneficialFoods: ['Lentils', 'Rye crackers', 'Cumin'], instructions: 'A warm bowl of brown lentil soup served with dry-roasted rye crackers.' },
+          snacks: { name: 'Sliced Apple with Cinnamon', beneficialFoods: ['Apple', 'Cinnamon'], instructions: 'Snack on fresh crisp apple slices dusted with metabolism-boosting cinnamon.' }
+        }
+      },
+      {
+        day: 'Saturday',
+        meals: {
+          breakfast: { name: 'Ragi Roti with Spicy Tomato Chutney', beneficialFoods: ['Finger millet (Ragi)', 'Tomato', 'Garlic', 'Chillies'], instructions: 'A small ragi flatbread served with a highly stimulating tomato-garlic chutney.' },
+          lunch: { name: 'Barley Flatbread & Spiced Bitter Gourd (Karela)', beneficialFoods: ['Barley', 'Bitter gourd', 'Mustard oil', 'Turmeric'], instructions: 'Eat barley roti with bitter gourd stir-fried with turmeric and mustard oil.' },
+          dinner: { name: 'Barley Soup with Spinach & Ginger', beneficialFoods: ['Barley', 'Spinach', 'Ginger', 'Black pepper'], instructions: 'A warming green barley broth loaded with wilted spinach and ginger.' },
+          snacks: { name: 'Warm Tulsi & Ginger Tea', beneficialFoods: ['Tulsi leaves', 'Fresh ginger'], instructions: 'Steep holy basil (Tulsi) leaves and sliced ginger in hot water.' }
+        }
+      },
+      {
+        day: 'Sunday',
+        meals: {
+          breakfast: { name: 'Savory Besan Chilla with Mint Chutney', beneficialFoods: ['Gram flour', 'Mint', 'Coriander', 'Black pepper'], instructions: 'Chickpea flour savory pancake served with spicy, stimulating mint-coriander chutney.' },
+          lunch: { name: 'Quinoa Upma with Mustard-Chilli Tadka', beneficialFoods: ['Quinoa', 'Mustard seeds', 'Green chillies', 'Ginger'], instructions: 'Sauté quinoa in dry spices, steam with ginger and green chillies.' },
+          dinner: { name: 'Spiced Vegetable Broth with Moong Sprouts', beneficialFoods: ['Moong sprouts', 'Carrots', 'Cabbage', 'Black pepper'], instructions: 'Cook mung bean sprouts and chopped vegetables in a spicy ginger-cumin broth.' },
+          snacks: { name: 'Dry Roasted Pumpkin Seeds', beneficialFoods: ['Pumpkin seeds'], instructions: 'Enjoy a small handful of dry-toasted pumpkin seeds.' }
+        }
+      }
+    ],
     lifestyleTips: [
       'Avoid day sleeping at all costs; it slows down metabolism and increases sluggishness/phlegm.',
       'Wake up early (before 6:00 AM) to align with natural cosmic energetic cycles.',

@@ -1,0 +1,18 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile & Saved Reports",
+      "description": "User specific assessment reports and preferences",
+      "properties": {
+        "savedReports": {
+          "type": "array",
+          "description": "Array of saved Ayurvedic dietary reports"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp of last update"
+        }
+      }
+    }
+  }
+}

@@ -49,9 +49,26 @@ export interface DietRecommendation {
   avoidFoods: string[];
   keySpices: { name: string; purpose: string }[];
   mealPlan: MealPlan;
+  weeklyPlan: {
+    day: string;
+    meals: MealPlan;
+  }[];
   lifestyleTips: string[];
   herbalRemedies: string[];
   generalAdvice: string;
+}
+
+export interface PersonalizationProfile {
+  age: number;
+  sex: string;
+  season: string;
+  climate: string;
+  occupation: string;
+  symptomSeverity: 'Mild' | 'Moderate' | 'Severe';
+  eatingSchedule: string;
+  allergies: string[];
+  constitutionHistory: string;
+  notificationsEnabled?: boolean;
 }
 
 export interface SavedReport {
@@ -62,4 +79,5 @@ export interface SavedReport {
   primaryDosha: 'Vata' | 'Pitta' | 'Kapha';
   symptomsCount: number;
   recommendation: DietRecommendation;
+  personalization?: PersonalizationProfile;
 }

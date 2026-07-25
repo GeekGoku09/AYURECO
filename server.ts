@@ -35,7 +35,7 @@ async function startServer() {
   // API Endpoint for Ayurvedic Diet Recommendations
   app.post("/api/recommend", async (req, res) => {
     try {
-      const { prakritiScores, selectedSymptoms, selectedSymptomTexts } = req.body;
+      const { prakritiScores, selectedSymptoms, selectedSymptomTexts, personalization } = req.body;
 
       if (!prakritiScores) {
         return res.status(400).json({ error: "Missing prakritiScores parameter." });
@@ -52,6 +52,19 @@ async function startServer() {
 
       const client = getAiClient();
 
+      // Ensure robust personalization defaults if not passed
+      const profile = personalization || {
+        age: 30,
+        sex: "Female",
+        season: "Summer",
+        climate: "Moderate",
+        occupation: "Desk Job (Sedentary)",
+        symptomSeverity: "Mild",
+        eatingSchedule: "Regular 3 Meals",
+        allergies: [],
+        constitutionHistory: "Not sure / Calculate"
+      };
+
       const prompt = `
         You are an expert Ayurvedic Physician, Nutritionist, and Diet Recommender System.
         Analyze the following user data to produce a deeply personalized Ayurvedic Diet and Lifestyle Recommendation.
@@ -61,20 +74,41 @@ async function startServer() {
         - Pitta: ${prakritiScores.pitta}
         - Kapha: ${prakritiScores.kapha}
 
-        User Current Symptoms (indicating Vikriti/Imbalances) list:
+        User Current Symptoms (indicating active Vikriti imbalance):
         ${selectedSymptomTexts && selectedSymptomTexts.length > 0 
           ? selectedSymptomTexts.map((s: string) => `- ${s}`).join("\n") 
           : "No specific symptoms reported (balanced state)."}
 
+        Deep Personalization Profile:
+        - Age: ${profile.age} (Determine their Ayurvedic stage of life: Childhood/Kapha Kaala, Adulthood/Pitta Kaala, or Elderhood/Vata Kaala, and adapt your advice).
+        - Sex: ${profile.sex}
+        - Current Season: ${profile.season}
+        - Current Climate: ${profile.climate}
+        - Occupation/Daily Pace: ${profile.occupation}
+        - Severity of Symptoms: ${profile.symptomSeverity} (If moderate or severe, focus heavily on easily digestible, healing foods).
+        - Eating Schedule: ${profile.eatingSchedule}
+        - Food Allergies, Cuisine & Diet Restrictions: ${profile.allergies && profile.allergies.length > 0 ? profile.allergies.join(", ") : "None"}
+        - Known Constitution History (Baseline Record): ${profile.constitutionHistory}
+
         Task:
         1. Calculate their Primary Dosha (highest score) and Secondary Dosha.
-        2. Assess their current imbalances (Vikriti) based on the reported symptoms.
+        2. Assess their current imbalances (Vikriti) based on the reported symptoms, and modulate recommendation severity based on symptomSeverity (${profile.symptomSeverity}).
         3. Formulate a personalized diet plan containing:
-           - Beneficial foods (specific items with explanations)
+           - Beneficial foods (specific items with explanations, strictly respecting their food restrictions/allergies and preferred cuisine styles)
            - Foods to avoid (with reasons)
-           - Key spices and herbs that are highly therapeutic
-           - A structured daily meal plan (breakfast, lunch, dinner, snacks)
-        4. Provide supportive lifestyle/Dinacharya recommendations (daily habits, sleep, exercise) to balance their unique constitution and alleviate symptoms.
+           - Key spices and herbs that are highly therapeutic for their constitution, season, and climate
+           - A structured daily representative meal plan (breakfast, lunch, dinner, snacks)
+           - A complete, highly structured WEEKLY diet plan (7 days from Monday to Sunday).
+             IMPORTANT: The weekly plan MUST center heavily on highly authentic, traditional Ayurvedic Indian dishes suited to their constitution, active symptoms, eating schedule, and allergies.
+             CRITICAL FOOD RESTRICTION LAWS:
+             * If 'Gluten-free' is requested, do NOT suggest whole wheat, chapatis, rotis, sooji, or semolina. Suggest alternatives like buckwheat (Kuttu), millet (Ragi, Bajra, Jowar), or rice-based flatbreads.
+             * If 'Lactose-free' or 'Vegan' is selected, do NOT suggest ghee, milk, cow curd, paneer, or buttermilk. Recommend sesame oil, coconut milk, almond milk, tofu, or dairy-free replacements.
+             * If 'Sattvik' is selected, do NOT include onions, garlic, or excessive heat/chillies.
+             * If 'South Indian' is selected, lean heavily on classics like Ragi Idli, Pesarattu (moong dal crepe), lemon-ginger rice, Avial, Rasam, and coconut-based light curries.
+             * If 'North Indian' is selected, suggest dals (moong, masoor), vegetable sabzis (lauki, turai, kaddu), khichdi, and compatible rotis.
+             * If 'Western Cuisine' is selected, suggest warm baked oats, roasted root vegetables, cooked quinoa bowls, herbal stews, pumpkin soups, and cooked apples with cinnamon.
+             Ensure dishes used in Monday-Sunday are tailored to these choices.
+        4. Provide supportive lifestyle/Dinacharya recommendations (daily habits, sleep, exercise) to balance their unique constitution, age stage, and occupation.
 
         Rules:
         - Write in an encouraging, comforting, and highly professional Ayurvedic healer's tone.
@@ -185,6 +219,59 @@ async function startServer() {
                 },
                 required: ["breakfast", "lunch", "dinner", "snacks"]
               },
+              weeklyPlan: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    day: { type: Type.STRING, description: "e.g., 'Monday', 'Tuesday', ..., 'Sunday'" },
+                    meals: {
+                      type: Type.OBJECT,
+                      properties: {
+                        breakfast: {
+                          type: Type.OBJECT,
+                          properties: {
+                            name: { type: Type.STRING },
+                            beneficialFoods: { type: Type.ARRAY, items: { type: Type.STRING } },
+                            instructions: { type: Type.STRING }
+                          },
+                          required: ["name", "beneficialFoods", "instructions"]
+                        },
+                        lunch: {
+                          type: Type.OBJECT,
+                          properties: {
+                            name: { type: Type.STRING },
+                            beneficialFoods: { type: Type.ARRAY, items: { type: Type.STRING } },
+                            instructions: { type: Type.STRING }
+                          },
+                          required: ["name", "beneficialFoods", "instructions"]
+                        },
+                        dinner: {
+                          type: Type.OBJECT,
+                          properties: {
+                            name: { type: Type.STRING },
+                            beneficialFoods: { type: Type.ARRAY, items: { type: Type.STRING } },
+                            instructions: { type: Type.STRING }
+                          },
+                          required: ["name", "beneficialFoods", "instructions"]
+                        },
+                        snacks: {
+                          type: Type.OBJECT,
+                          properties: {
+                            name: { type: Type.STRING },
+                            beneficialFoods: { type: Type.ARRAY, items: { type: Type.STRING } },
+                            instructions: { type: Type.STRING }
+                          },
+                          required: ["name", "beneficialFoods", "instructions"]
+                        }
+                      },
+                      required: ["breakfast", "lunch", "dinner", "snacks"]
+                    }
+                  },
+                  required: ["day", "meals"]
+                },
+                description: "7-day personalized weekly diet plan (Monday to Sunday) using mostly Ayurvedic Indian foods tailored to their dosha."
+              },
               lifestyleTips: {
                 type: Type.ARRAY,
                 items: { type: Type.STRING },
@@ -210,6 +297,7 @@ async function startServer() {
               "avoidFoods",
               "keySpices",
               "mealPlan",
+              "weeklyPlan",
               "lifestyleTips",
               "herbalRemedies",
               "generalAdvice"
